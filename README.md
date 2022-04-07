@@ -62,12 +62,12 @@ developing your own process.
 
 - Add a new toy when the toy form is submitted
 
-  - How I debugged:
+  - How I debugged: First just submit the form and see what status message you get and the server code shown. Network preview on the browser and the server log both show "NameError (uninitialized constant ToysController::Toys)" This tells me that we are using the wrong model name and it needs to be corrected from Toys to Toy in the toys_controller
 
 - Update the number of likes for a toy
 
-  - How I debugged:
+  - How I debugged: Again click on the button and look at the codes and data loged in both the Network tab and Console of the browser and in the server log. No Content was logged. Telling me that my update path of the controller was not returning anything or was returning Header: No Content. Update update path to return JSON. 
 
 - Donate a toy to Goodwill (and delete it from our database)
 
-  - How I debugged:
+  - How I debugged: Click on donate button again look at the Network tab in the browser and the server logs. ActionController::RoutingError (No route matches [DELETE] "/toys/9" is displayed in both. This tells me I need to add destroy to my routes in routes.rb.
